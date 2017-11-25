@@ -108,9 +108,15 @@ NSLog(_removeLogFormatTokens(format), ##__VA_ARGS__); \
 _Pragma( _stringify( clang diagnostic pop ) )
 
 // All levels do the same thing
-#define URKLog(format, ...)      _nsLogWithoutWarnings(format, ##__VA_ARGS__);
-#define URKLogInfo(format, ...)  _nsLogWithoutWarnings(format, ##__VA_ARGS__);
+#if DEBUG
+#define URKLog(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
+#define URKLogInfo(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
 #define URKLogDebug(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
+#else
+#define URKLog(...) (void)0;
+#define URKLogInfo(...) (void)0;
+#define URKLogDebug(...) (void)0;
+#endif
 #define URKLogError(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
 #define URKLogFault(format, ...) _nsLogWithoutWarnings(format, ##__VA_ARGS__);
 
