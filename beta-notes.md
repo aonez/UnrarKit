@@ -1,1 +1,1 @@
-Fixed bug when listing file info for multivolume archive that resulted in duplicate items (Issue #67 - Thanks to [@skito](https://github.com/skito) for catching this)
+* Added new method `-iterateFileInfo:error:` that takes a block, allowing for lazy iteration of file info, without building up an in-memory array (Issue #73 - Thanks to [@yanex](https://github.com/yanex) for the suggestion!)

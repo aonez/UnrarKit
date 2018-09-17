@@ -5,11 +5,14 @@
 * Added support for `NSProgress` and `NSProgressReporting` in all extraction and iteration methods (Issue #34)
 * Added enhanced support for multivolume archives (PRs #59, #38 - Thanks to [@aonez](https://github.com/aonez) for the idea and implementation!)
 * Added methods for checking data integrity of archived files (Issue #26, PR #61 - Thanks to [@amosavian](https://github.com/amosavian) for the suggestion!)
+* Added new method `-iterateFileInfo:error:` that takes a block, allowing for lazy iteration of file info, without building up an in-memory array (Issue #73 - Thanks to [@yanex](https://github.com/yanex) for the suggestion!)
 * Added detailed logging using new unified logging framework. See [the readme](README.md) for more details (Issue #35)
 * Added localized details to returned `NSError` objects (Issue #45)
 * Fixed bug when listing file info for multivolume archive that resulted in duplicate items (Issue #67 - Thanks to [@skito](https://github.com/skito) for catching this)
 * Moved `unrar` sources into a static library, and addressed a wide variety of warnings exposed by the `-Weverything` flag (Issue #56)
+* Upgraded UnRAR library to v5.6.3 (Issue #77)
 * Switched to Travis Build Stages instead of the unofficial Travis-After-All (Issue #42)
+* Added CocoaPods Test Spec, so your test suite can also run UnrarKit's unit tests Issue #44
 * Fixed warnings from Xcode 9 (Issue #51)
 * Removed iOS-specific targets, after allowing macOS framework and unit test bundles to be cross-platform (Issue #55)
 
